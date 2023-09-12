@@ -1,5 +1,7 @@
 package com.briz.embeddable;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,5 +31,10 @@ public String save()
 	s.setStudentaddress(sa);
 	srepo.save(s);
 	return "data saved";
+}
+@RequestMapping("/alldata")
+public List<Student> alldata()
+{
+	return srepo.findAll();
 }
 }
