@@ -42,4 +42,9 @@ public List<Student> alldata()
 	{
 		return srepo.findById(id);
 	}
+	@RequestMapping("/by/{name}")
+	public Student byname(@PathVariable String name)
+	{
+		return srepo.findByName(name);
+	}
 }
